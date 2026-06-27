@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030014;
+  --foreground: #ffffff;
+  --accent: #00f0ff;
+  --accent-purple: #8a2be2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-purple: var(--accent-purple);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--background);
+  background-image: radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.15), transparent 25%),
+                    radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.15), transparent 25%);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(15, 15, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border: 1px solid var(--accent-purple);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.2);
+  transform: translateY(-5px);
+}
+
+.neon-text-blue {
+  text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 10px var(--accent-purple), 0 0 20px var(--accent-purple);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030014;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-purple);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
